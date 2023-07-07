@@ -24,8 +24,8 @@ pipeline {
        stage('Docker Build and Push') {
             steps {
               script {
-          //  withDockerRegistry([credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com']) {
-              docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+              withDockerRegistry([credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com']) {
+            //  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
               sh 'printenv'
               sh 'docker build -t raghvendra2006/numeric-app:""GIT_COMMIT"" .'
               sh 'docker push raghvendra2006/numeric-app:""GIT_COMMIT""'
