@@ -1,4 +1,4 @@
-pipeline {
+Depipeline {
   agent any
 
   stages {
@@ -31,7 +31,7 @@ pipeline {
             }
          }
        }
-       stage('Docker Build and Push') {
+       stage('Kubernets Deployment - DEV') {
             steps {
               withKubeConfig([credentialsId: 'kubeconfig']) {
               sh "sed -i 's#replace#raghvendra2006/numeric-app:${GIT_COMMIT}#g' k8s_deployment_service.yaml"
