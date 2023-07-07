@@ -1,0 +1,4 @@
+accesskey="ytf5geesresbhfdtrdefts"
+secretkeys="ungtbrdvews324w357i65ydtbetsved6r7ro"
+region="ap-south-1"
+output="json"
