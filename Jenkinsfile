@@ -23,6 +23,7 @@ pipeline {
        }
        stage('Docker Build and Push') {
             steps {
+              Script {
           //  withDockerRegistry([credentialsId: 'dockerhub', url: 'https://registry.hub.docker.com']) {
               docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
               sh 'printenv'
@@ -30,6 +31,7 @@ pipeline {
               sh 'docker push raghvendra2006/numeric-app:""GIT_COMMIT""'
             }
           }
+         }
        }
     }
 }
