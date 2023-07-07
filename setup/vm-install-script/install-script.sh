@@ -56,10 +56,9 @@ sleep 60
 
 echo "untaint controlplane node"
 kubectl taint node $(kubectl get nodes -o=jsonpath='{.items[].metadata.name}') node.kubernetes.io/not-ready:NoSchedule-
-kubectl taint node $(kubectl get nodes -o=jsonpath='{.items[].metadata.name}') node-role.kubernetes.io/master:NoSchedule-
+#kubectl taint node $(kubectl get nodes -o=jsonpath='{.items[].metadata.name}') node-role.kubernetes.io/master:NoSchedule-
+kubectl taint node $(kubectl get nodes -o=jsonpath='{.items[].metadata.name}') node-role.kubernetes.io/control-plane:NoSchedule-
 kubectl get node -o wide
-
-
 
 echo ".........----------------#################._.-.-Java and MAVEN-.-._.#################----------------........."
 sudo apt install openjdk-11-jdk -y
