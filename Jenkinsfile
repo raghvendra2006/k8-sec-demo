@@ -30,6 +30,7 @@ pipeline {
           pitmutation mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
         }
       }
+     }
        stage('Docker Build and Push') {
             steps {
               withDockerRegistry([credentialsId: "dockerhub", url: ""]) {
