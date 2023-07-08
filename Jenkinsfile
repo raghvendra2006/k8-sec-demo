@@ -21,6 +21,7 @@ pipeline {
            }
          }
        }
+    
      stage('Mutation Tests - PIT') {
       steps {
         sh "mvn org.pitest:pitest-maven:mutationCoverage"
@@ -31,6 +32,14 @@ pipeline {
         }
       }
      }
+
+      stages {
+      stage('SonarQube - SAST') {
+            steps {
+              sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric-application -Dsonar.projectName='numeric-application' -Dsonar.host.url=http://34.127.78.67:9000 -Dsonar.token=sqp_2165a34517ae8946b400b857153e77bc0913cb2c"
+            }
+        }
+        
        stage('Docker Build and Push') {
             steps {
               withDockerRegistry([credentialsId: "dockerhub", url: ""]) {
@@ -41,6 +50,7 @@ pipeline {
             }
          }
        }
+        
        stage('Kubernets Deployment - DEV') {
             steps {
               withKubeConfig([credentialsId: 'kubeconfig']) {
@@ -49,5 +59,6 @@ pipeline {
             }
          }
        }
+        
     }
 }
