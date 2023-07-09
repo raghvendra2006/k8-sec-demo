@@ -102,15 +102,25 @@
 			      E.g. a company-wide suppression file and local project file 
 			-->
       <!-- 
-			     <cveUrlModified>http://internal-mirror.mycorp.com/nvdcve-1.1-modified.json.gz</cveUrlModified>  
-			                    <cveUrlBase>http://internal-mirror.mycorp.com/nvdcve-1.1-%d.json.gz</cveUrlBase>
+		<cveUrlModified>http://internal-mirror.mycorp.com/nvdcve-1.1-modified.json.gz</cveUrlModified>  
+			<cveUrlBase>http://internal-mirror.mycorp.com/nvdcve-1.1-%d.json.gz</cveUrlBase>
 			     <suppressionFiles>               
-			                        <suppressionFile>http://example.org/suppression.xml</suppressionFile>
-			                        <suppressionFile>project-suppression.xml</suppressionFile> 
-			                    </suppressionFiles> 
-			                 -->
+			              <suppressionFile>http://example.org/suppression.xml</suppressionFile>
+			              <suppressionFile>project-suppression.xml</suppressionFile> 
+			      </suppressionFiles> 
+      -->
    </configuration>
-</plugin>
+   </plugin>
+<!-- Add maven -->
+	    <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>3.5.1</version>
+         <configuration>
+             <source>1.8</source>
+             <target>1.8</target>
+         </configuration>
+     </plugin>
 		</plugins>
 	</build>
 
