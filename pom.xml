@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.13</version>  <!-- update version 2.2.1.RELEASE to 2.6.0 to close dependency -->
+		<version>2.3.12.RELEASE</version>  <!-- update version 2.2.1.RELEASE to 2.6.0 to close dependency -->
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -67,11 +67,11 @@
 				</execution>
 				</executions>
 			</plugin>			
-			<!--                   PITest Mutation Plugin                   -->
+			<!--   PITest Mutation Plugin  -->
 			<plugin>
 			<groupId>org.pitest</groupId>
 			<artifactId>pitest-maven</artifactId>
-			<version>1.14.2</version> <!-- update from 1.5.0 to 1.14.2 -->
+			<version>1.5.0</version>
 			<dependencies>
 				<dependency>
 					<groupId>org.pitest</groupId>
@@ -88,19 +88,19 @@
 			</configuration>
 		</plugin>
 
-		<!--                   Dependency Check Plugin                   -->
+		<!-- Dependency Check Plugin  -->
 			<plugin>
    				<groupId>org.owasp</groupId>
    				<artifactId>dependency-check-maven</artifactId>
-   				<version>8.3.1</version>
+   				<version>6.1.6</version>
   			 <configuration>
       			<format>ALL</format>
   			<failBuildOnCVSS>5</failBuildOnCVSS>  <!-- fail the build for CVSS greater than or equal to 5 -->
-      <!-- 
+      			<!-- 
 			      use internal mirroring of CVE contents 
 			      Suppress files 
 			      E.g. a company-wide suppression file and local project file 
-			     -->
+			-->
       <!-- 
 			     <cveUrlModified>http://internal-mirror.mycorp.com/nvdcve-1.1-modified.json.gz</cveUrlModified>  
 			                    <cveUrlBase>http://internal-mirror.mycorp.com/nvdcve-1.1-%d.json.gz</cveUrlBase>
