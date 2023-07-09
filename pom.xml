@@ -71,7 +71,7 @@
 			<plugin>
 			<groupId>org.pitest</groupId>
 			<artifactId>pitest-maven</artifactId>
-			<version>1.5.0</version>
+			<version>1.14.2</version> <!-- update from 1.5.0 to 1.14.2 -->
 			<dependencies>
 				<dependency>
 					<groupId>org.pitest</groupId>
