@@ -1,3 +1,5 @@
 fileignoreconfig:
 - filename: accesskey.txt
   checksum: 4f0deb30b38efc4cffbb703a1e503d5786111d12dfc2535a4b5ce4deb3e89fcf
+- filename: Jenkinsfile
+  checksum: 8cf6623dfeeb1394fd820defdf122403aefaee6d77cc7a1677478d2f1f9cccdc
