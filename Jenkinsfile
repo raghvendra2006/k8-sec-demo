@@ -63,7 +63,7 @@ pipeline {
               withDockerRegistry([credentialsId: "dockerhub", url: ""]) {
             //  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
               sh 'printenv'
-              sh 'docker build -t raghvendra2006/numeric-app:""$GIT_COMMIT"" .'
+              sh 'sudo docker build -t raghvendra2006/numeric-app:""$GIT_COMMIT"" .'
               sh 'docker push raghvendra2006/numeric-app:""$GIT_COMMIT""'
             }
          }
